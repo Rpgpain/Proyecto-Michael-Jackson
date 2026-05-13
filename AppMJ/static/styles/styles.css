@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white; 
+    font-family: sans-serif; /* Una fuente limpia por ahora */
+}
+
+.main-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh; 
+    /* 2. Configuramos el fondo para que se pegue a la izquierda, Esta parte 
+    frednali es para poder dividir la pantalla en 2 y tener la imagen de un lado
+    y el texto en otro */
+    background-image: url('../images/Michael_Jackson_Fondo_Negro.jpg'); 
+    background-position: left center;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-color: black;
+}
+
+/* 3. Colocamos los textos en la derecha */
+.contenido {
+    /* Le decimos al contenedor de texto que se vaya a la columna 2 (derecha) */
+    grid-column: 2;
+    /* Centramos el texto vertical y horizontalmente dentro de su mitad */
+    place-self: center;
+    text-align: center; /* Para que los textos queden alineados entre sí */
+}
+
+.contenido h1{
+    font-size: 5rem;
+}
