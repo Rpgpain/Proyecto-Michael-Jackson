@@ -1,0 +1,18 @@
+.contenedor-historia {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
+    gap: 4rem; /* Espacio entre el texto y la foto */
+    align-items: center; /* Centra el texto verticalmente con la foto */
+}
+
+/* --- Estilos de la Columna de Texto --- */
+.historia-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+
