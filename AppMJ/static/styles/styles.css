@@ -11,17 +11,22 @@ body {
 }
 
 .main-header {
+    animation: fadeInBg 2s ease-out;
     display: grid;
     grid-template-columns: 1fr 1fr; 
     height: 100vh; 
-    /* 2. Configuramos el fondo para que se pegue a la izquierda, Esta parte 
-    frednali es para poder dividir la pantalla en 2 y tener la imagen de un lado
-    y el texto en otro */
-    background-image: url('../images/Michael_Jackson_Fondo_Negro.jpg'); 
-    background-position: left center;
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    background-color: black;
+   
+    background-image: 
+        url('../images/Michael_Jackson_Fondo_Negro.jpg'),
+        radial-gradient(circle at bottom right, #2b1e06 0%, #000000 60%); 
+    
+    /* Configuración de posición y tamaño (Primero la foto, luego el gradiente) */
+    background-position: 0% -550%, center center;
+    background-size: 60%, cover; 
+    background-repeat: no-repeat, no-repeat; 
+    
+    /* ¡EL TRUCO MÁGICO! Mezcla la foto y el gradiente borrando el borde negro */
+    background-blend-mode: screen;
 }
 
 /* 3. Colocamos los textos en la derecha */
@@ -31,8 +36,82 @@ body {
     /* Centramos el texto vertical y horizontalmente dentro de su mitad */
     place-self: center;
     text-align: center; /* Para que los textos queden alineados entre sí */
+    
+    /* Animación: Espera 0.5s y luego entra deslizando hacia arriba */
+    animation: slideUpFade 1.5s ease-out 0.5s both;
 }
 
 .contenido h1{
-    font-size: 5rem;
+    font-size: 7rem;
+}
+
+
+/*ESTILO DEL BOTON*/
+
+.boton-magia {
+  width: 220px; /* <--- Lo hice más ancho para que quepa tu texto */
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin: 20px auto; /* Para centrarlo y darle espacio arriba */
+}
+
+.boton-magia::before {
+  position: absolute;
+  content: "DESCUBRE LA MAGIA"; /* <--- Tu texto personalizado */
+  color: #ffd277;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.boton-magia:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.boton-magia:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.boton-magia:active {
+  transform: scale(0.95);
+}
+
+/* ==================================
+   ANIMACIONES PREMIUM DE ENTRADA
+   ================================== */
+
+@keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* Empieza 40px más abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
 }
