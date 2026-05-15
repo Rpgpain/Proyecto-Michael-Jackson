@@ -1,10 +1,114 @@
+/* =========================================
+SECCIÓN Banda de Records
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: black; /* Fondo global extra oscuro */
+    color: white;
+}
+
+/* =========================================
+SECCIÓN 2: BANDA DE RÉCORDS
+   ========================================= */
+
+.seccion-records {
+    background-color: #1A1A1A; 
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 4rem 2rem; 
+}
+
+.contenedor-records {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribuye los bloques equitativamente */
+    align-items: center;
+    gap: 2rem;
+}
+
+.record-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px; /* Separación entre ícono, número y texto */
+    min-width: 200px;
+}
+
+/* El círculo semitransparente detrás del ícono */
+.icono-fondo {
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto del mouse por los iconos */
+.record-item:hover .icono-fondo {
+    transform: translateY(-5px);
+    background-color: rgba(212, 175, 55, 0.2);
+}
+
+
+.record-numero {
+    font-size: 3rem;
+    font-weight: 600;
+    /* Efecto de texto con gradiente de blanco a gris */
+    background: linear-gradient(to bottom, #FFFFFF, #9CA3AF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+
+.record-etiqueta {
+    font-size: 0.75rem;
+    color: #9CA3AF; 
+    font-weight: 400;
+    letter-spacing: 0.25em; /* MUCHÍSIMO ESPACIO ENTRE LETRAS (Premium) */
+    text-transform: uppercase;
+}
+
+/* Diseño Responsivo: Para que se vea bien en celulares */
+@media (max-width: 768px) {
+    .seccion-records {
+        padding: 3rem 1rem;
+    }
+    .contenedor-records {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+
+
+/* =========================================
+SECCIÓN 2: LA HISTORIA (Pantalla Dividida)
+   ========================================= */
+
+.seccion-historia {
+    background-color: #0A0A0A; 
+    padding: 6rem 2rem;
+}
+
 .contenedor-historia {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
+    grid-template-columns: 1fr 1fr; /*  columnas del mismo ancho */
     gap: 4rem; /* Espacio entre el texto y la foto */
-    align-items: center; /* Centra el texto verticalmente con la foto */
+    align-items: center; 
 }
 
 /* --- Estilos de la Columna de Texto --- */
@@ -14,5 +118,370 @@
     gap: 1.5rem;
 }
 
+.titulo-dorado {
+    color: #D4AF37;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.historia-texto p {
+    color: #9CA3AF; 
+    font-size: 1.1rem;
+    line-height: 1.8; 
+}
+
+.enlace-biografia {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #F3F4F6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: max-content;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
 
 
+.enlace-biografia:hover {
+    color: #D4AF37;
+    border-bottom: 1px solid #D4AF37;
+}
+
+.enlace-biografia svg {
+    transition: transform 0.3s ease;
+}
+
+.enlace-biografia:hover svg {
+    transform: translateX(5px);
+}
+
+/* --- Estilos de la Columna de la Imagen --- */
+.historia-imagen {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+}
+
+.historia-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s ease; /* Transición súper suave */
+}
+
+/* Efecto de acercamiento al pasar el mouse sobre la foto */
+.historia-imagen:hover img {
+    transform: scale(1.05); /* Se acerca un 5% */
+}
+
+/* Máscara de gradiente para que la imagen se integre al fondo negro */
+.imagen-overlay {
+    position: absolute;
+    inset: 0; /* Cubre toda la foto */
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0) 40%);
+    pointer-events: none; /* Para que no estorbe si hay clics */
+}
+
+/* =========================================
+SECCIÓN BANNER DE ÁLBUMES 
+   ========================================= */
+
+.banner-carrusel {
+    position: relative;
+    width: 100vw;
+    height:450px ; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden; /* Oculta las fotos que están fuera de la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+
+/* LA PISTA QUE CONTIENE LAS 5 FOTOS */
+.pista-carrusel {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600%; 
+    height: 100%;
+    z-index: 1; /* Al fondo */
+    /* Animación de 25 segundos en total, se repite infinitamente */
+    animation: desplazamiento 25s infinite; 
+}
+
+/* CADA FOTO INDIVIDUAL */
+.slide {
+    width: 16.666%; 
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* EL VELO OSCURO PARA LEER EL TEXTO */
+.overlay-oscuro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    z-index: 2; /* Por encima de las fotos, por debajo del texto */
+}
+
+/* EL CONTENIDO DEL BANNER (TEXTO Y BOTÓN) */
+.contenido-banner {
+    position: relative;
+    z-index: 3; /* En la capa más alta para que se pueda hacer clic */
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+
+.contenido-banner h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+}
+
+.contenido-banner p {
+    color: #D1D5DB;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Estilo del boton */
+.boton-magia {
+width: 220px; /* <--- Lo hice más ancho para que quepa tu texto */
+height: 40px;
+border: none;
+border-radius: 10px;
+background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+background-size: 250%;
+background-position: left;
+color: #ffd277;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition-duration: 1s;
+overflow: hidden;
+margin: 20px auto; /* Para centrarlo y darle espacio arriba */
+}
+
+.boton-magia::before {
+position: absolute;
+  content: "VER ÁLBUMES"; /* <--- Tu texto personalizado */
+color: #ffd277;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 97%;
+height: 90%;
+border-radius: 8px;
+transition-duration: 1s;
+background-color: rgba(0, 0, 0, 0.842);
+background-size: 200%;
+}
+
+.boton-magia:hover {
+background-position: right;
+transition-duration: 1s;
+}
+
+.boton-magia:hover::before {
+background-position: right;
+transition-duration: 1s;
+}
+
+.boton-magia:active {
+transform: scale(0.95);
+}
+
+
+
+
+/* 7. EFECTO AL HACER CLIC */
+.btn-dorado:active {
+    transform: translateY(0) scale(0.95); /* Se hunde ligeramente al presionarlo */
+}
+
+
+
+
+/* LA ANIMACIÓN CLAVE: CÓMO SE MUEVEN LAS FOTOS */
+@keyframes desplazamiento {
+    0%, 15%   { transform: translateX(0); }             /* Muestra Foto 1 Original */
+    20%, 35%  { transform: translateX(-16.666%); }      /* Muestra Foto 2 */
+    40%, 55%  { transform: translateX(-33.333%); }      /* Muestra Foto 3 */
+    60%, 75%  { transform: translateX(-50%); }          /* Muestra Foto 4 */
+    80%, 95%  { transform: translateX(-66.666%); }      /* Muestra Foto 5 */
+    100%      { transform: translateX(-83.333%); }      /* Muestra la Foto Clonada y reinicia sin que se note */
+}
+
+
+/* =========================================
+SECCIÓN 4: LA MAGIA DEL BAILE (Static Gallery)
+   ========================================= */
+
+.seccion-baile {
+    position: relative;
+    padding: 8rem 2rem;
+    background-color: #050505;
+    overflow: hidden;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+}
+
+/* EFECTO ESCENARIO (Mantenemos la profundidad de fondo) */
+.resplandor-escenario {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.06) 0%, transparent 80%);
+    pointer-events: none;
+    padding: 6rem 0;
+}
+
+/* --- CENTRADO Y MÁRGENES DE LOS TÍTULOS --- */
+.contenedor-baile {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.titulo-dorado {
+    color: #D4AF37;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.subtitulo-baile {
+    color: #9CA3AF;
+    margin-bottom: 5rem; /* Espacio generoso antes de las tarjetas */
+    letter-spacing: 2px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* --- GRID DE 3 COLUMNAS Y ESPACIADO --- */
+.grid-movimientos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 3rem; /* Espacio entre cuadros */
+    width: 100%;
+}
+
+/* --- LA TARJETA CON BORDE DEFINIDO --- */
+.tarjeta-movimiento {
+    background: rgba(20, 20, 20, 0.5); /* Fondo muy sutil */
+    
+    /*  Borde definido por defecto! */
+    border: 2px solid rgba(212, 175, 55, 0.2); /* Un dorado muy oscuro/transparente para empezar */
+    
+    border-radius: 12px; /* Esquinas ligeramente redondeadas para un look moderno */
+    overflow: hidden; /* Mantiene la imagen dentro de los bordes redondeados */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transición suave profesional */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- CONTENEDOR DE LA IMAGEN (CUADRADO) --- */
+.imagen-encabezado {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Mantenemos el formato cuadrado */
+    overflow: hidden;
+    /* Línea divisoria interna (opcional, si te gusta cómo se ve el borde total quizás no la necesites) */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
+}
+
+.imagen-encabezado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformar */
+    transition: transform 0.6s ease; /* Zoom lento al pasar el cursor */
+
+    object-position: center;
+}
+
+/* --- CUERPO DE TEXTO --- */
+.cuerpo-tarjeta {
+    padding: 2rem;
+    text-align: left;
+    flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura si el texto varía */
+}
+
+.cuerpo-tarjeta h3 {
+    color: #fff; /* Título en blanco para contraste */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: 'Urbanist', sans-serif;
+    letter-spacing: 1px;
+}
+
+.cuerpo-tarjeta p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.8; /* Mantenemos el buen interlineado */
+    margin: 0;
+}
+
+/* --- EFECTO HOVER (Centrado en el Borde) --- */
+
+/* Cuando pasamos el cursor por el grid, oscurecemos las otras un poco */
+.grid-movimientos:hover .tarjeta-movimiento {
+    opacity: 0.5;
+    transform: scale(0.98); /* Pequeño efecto de alejamiento en las no seleccionadas */
+}
+
+/* Cuando pasamos el cursor sobre LA tarjeta específica */
+.grid-movimientos .tarjeta-movimiento:hover {
+    opacity: 1;
+    transform: translateY(-15px) scale(1); /* Se eleva y vuelve a tamaño normal */
+    
+    /* ¡NUEVO: El borde se ilumina intensamente! */
+    border-color: rgba(212, 175, 55, 1); /* Dorado puro y brillante */
+    
+    /* Sombra dorada para dar efecto de resplandor */
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); 
+}
+
+/* Zoom sutil en la imagen al hacer hover */
+.tarjeta-movimiento:hover .imagen-encabezado img {
+    transform: scale(1.08);
+}

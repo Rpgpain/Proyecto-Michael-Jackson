@@ -21,15 +21,15 @@
             <div class="historia-texto">
                 <h2 class="titulo-dorado">EL HOMBRE DETRÁS DEL MITO</h2>
                 <p>
-                    Desde sus primeros pasos en Gary, Indiana, junto a The Jackson 5, hasta convertirse en el artista más galardonado de todos los tiempos. Michael Jackson no solo hizo música; redefinió la cultura pop, rompió barreras raciales en la televisión y convirtió los videos musicales en verdaderas obras de arte cinematográficas.
+                    Nacido el 29 de agosto de 1958 en Gary, Indiana, Michael Joseph Jackson fue el octavo de diez hermanos en una familia de clase trabajadora. Su prodigioso talento se hizo evidente desde que era un niño, convirtiéndose rápidamente en el vocalista principal y el corazón de The Jackson 5. Sin embargo, su destino no era solo ser una estrella infantil; estaba destinado a redefinir el entretenimiento global.
                 </p>
                 <p>
-                    Su genio musical y su visión perfeccionista nos dejaron un legado que trasciende generaciones, demostrando que a través del arte, el baile y un mensaje de unidad, se puede curar al mundo.
+                    A medida que creció, Michael rompió las cadenas de su éxito temprano para forjar una carrera en solitario sin precedentes. Con una ética de trabajo inquebrantable y un perfeccionismo legendario, transformó la música, la danza y la moda. Aunque su vida personal estuvo frecuentemente bajo el intenso escrutinio de los medios y marcada por la controversia y la tragedia, su genialidad artística nunca se apagó. Falleció el 25 de junio de 2009, pero dejó tras de sí un legado inmortal, consolidado para siempre como el indiscutible "Rey del Pop".
                 </p>
             </div>
 
             <div class="historia-imagen">
-                <img src="{% static 'images/.png' %}" alt=" Foto de Michael Jackson en concierto">
+                <img src="{% static 'images/Michael Biografia.jfif' %}" alt=" Foto de Michael Jackson en concierto">
                 
                 <div class="imagen-overlay"></div>
             </div>
@@ -82,54 +82,71 @@
 
     <!-- SECCIÓN  DISCOGRAFÍA OFICIAL -->
 
-    <section class="banner-albumes">
-        
-        
-        
-        <div class="banner-contenido">
-            <h2>EL SONIDO DE UNA ERA</h2>
-            <p>
-                Explora la discografía oficial. Desde los ritmos que definieron los 70s hasta los álbumes que rompieron todos los récords mundiales. Adéntrate en el catálogo musical del Rey del Pop.
-            </p>
-            
-            <a href="#" class="btn-borde-dorado">EXPLORAR ÁLBUMES</a>
-        </div>
+    <section class="banner-carrusel">
+    <div class="pista-carrusel">
+        <div class="slide" style="background-image: url('../static/images/carrusel\ 1.jfif');"></div>
+        <div class="slide" style="background-image: url('../static/images/carrusel\ 2.jfif');"></div>
+        <div class="slide" style="background-image: url('../static/images/carrusel\ 3.jfif');"></div>
+        <div class="slide" style="background-image: url('../static/images/carrusel\ 4.jfif');"></div>
+        <div class="slide" style="background-image: url('../static/images/carrusel\ 5.jfif');"></div>
 
-    </section>
+        <div class="slide" style="background-image: url('../static/images/carrusel\ 1.jfif');"></div>
+    </div>
+
+    <div class="overlay-oscuro"></div>
+
+    <div class="contenido-banner">
+        <h1>The King of Pop</h1>
+        <p>Explora la discografía que cambió el mundo para siempre.</p>
+        <a href="#albumes" class="boton-magia">Ver Álbumes</a>
+    </div>
+</section>
 
 
     <!-- SECCIÓN: LA MAGIA DEL BAILE  -->
-    <section class="seccion-baile" id="zona-linterna">
-        
-        <div class="linterna-overlay" id="linterna"></div>
+<section class="seccion-baile">
+    <div class="resplandor-escenario"></div>
 
-        <div class="contenedor-baile">
-            <h2 class="titulo-dorado text-center">LA MAGIA DEL BAILE</h2>
-            <p class="subtitulo-baile">Pasa el cursor para iluminar el escenario</p>
+    <div class="contenedor-baile">
+        <h2 class="titulo-dorado text-center">LA MAGIA DEL BAILE</h2>
+        <p class="subtitulo-baile text-center">Explora los movimientos icónicos en imágenes</p>
 
-            <div class="grid-movimientos">
-                
-                <div class="tarjeta-movimiento">
-
-                    <h3>El Moonwalk</h3>
-                    <p>Presentado al mundo en 1983 durante Motown 25. La ilusión perfecta de caminar hacia adelante mientras el cuerpo se desliza hacia atrás, desafiando la fricción y la gravedad.</p>
-                </div>
-
-                <div class="tarjeta-movimiento">
+        <div class="grid-movimientos">
             
-                    <h3>Inclinación Antigravedad</h3>
-                    <p>Inmortalizada en "Smooth Criminal". Para lograr este asombroso ángulo de 45 grados en vivo, Michael co-inventó y patentó en EE. UU. unos zapatos especiales con un tacón que se enganchaba al escenario.</p>
+            <div class="tarjeta-movimiento">
+                <div class="imagen-encabezado">
+                    <img src="{% static 'images/moonwalk2.jfif'%}" alt="Michael Jackson Moonwalk">
                 </div>
-
-                <div class="tarjeta-movimiento">
-                
-                    <h3>El Giro y las Puntas</h3>
-                    <p>Una demostración pura de equilibrio y control físico. Tras una serie de giros a una velocidad vertiginosa, el tiempo parecía detenerse cuando quedaba suspendido sobre las puntas de sus icónicos mocasines.</p>
+                <div class="cuerpo-tarjeta">
+                    <h3>El Moonwalk</h3>
+                    <p>El paso que redefinió el escenario. Presentado en Motown 25 (1983), creó la ilusión de deslizarse hacia atrás mientras se camina hacia adelante.</p>
                 </div>
-
             </div>
+
+            <div class="tarjeta-movimiento">
+                <div class="imagen-encabezado">
+                    <img src="{% static 'images/inclinacion.jfif' %}" alt="Inclinación Smooth Criminal">
+                </div>
+                <div class="cuerpo-tarjeta">
+                    <h3>Inclinación</h3>
+                    <p>En 'Smooth Criminal' inclinó su cuerpo 45° hacia adelante. Para lograrlo, patentó (US 5.255.452) unos zapatos especiales con un mecanismo que se anclaba al escenario.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-movimiento">
+                <div class="imagen-encabezado">
+                    <img src="{% static 'images/giros y puntas 2.jfif' %}" alt="Giros y Puntas de Michael Jackson">
+                </div>
+                <div class="cuerpo-tarjeta">
+                    <h3>Giros y Puntas</h3>
+                    <p>Su firma inconfundible: múltiples giros perfectos sobre las puntas de los pies, terminando siempre en una pose escultural y precisa.</p>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- FOOTER -->
     <footer style="text-align: center; padding: 20px;">

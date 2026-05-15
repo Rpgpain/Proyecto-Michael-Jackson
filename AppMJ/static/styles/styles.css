@@ -15,7 +15,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     height: 100vh; 
-   
+
     background-image: 
         url('../images/Michael_Jackson_Fondo_Negro.jpg'),
         radial-gradient(circle at bottom right, #2b1e06 0%, #000000 60%); 
@@ -49,51 +49,51 @@ body {
 /*ESTILO DEL BOTON*/
 
 .boton-magia {
-  width: 220px; /* <--- Lo hice más ancho para que quepa tu texto */
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
-  background-size: 250%;
-  background-position: left;
-  color: #ffd277;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition-duration: 1s;
-  overflow: hidden;
-  margin: 20px auto; /* Para centrarlo y darle espacio arriba */
+width: 220px; /* <--- Lo hice más ancho para que quepa tu texto */
+height: 40px;
+border: none;
+border-radius: 10px;
+background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+background-size: 250%;
+background-position: left;
+color: #ffd277;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition-duration: 1s;
+overflow: hidden;
+margin: 20px auto; /* Para centrarlo y darle espacio arriba */
 }
 
 .boton-magia::before {
-  position: absolute;
+position: absolute;
   content: "DESCUBRE LA MAGIA"; /* <--- Tu texto personalizado */
-  color: #ffd277;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 97%;
-  height: 90%;
-  border-radius: 8px;
-  transition-duration: 1s;
-  background-color: rgba(0, 0, 0, 0.842);
-  background-size: 200%;
+color: #ffd277;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 97%;
+height: 90%;
+border-radius: 8px;
+transition-duration: 1s;
+background-color: rgba(0, 0, 0, 0.842);
+background-size: 200%;
 }
 
 .boton-magia:hover {
-  background-position: right;
-  transition-duration: 1s;
+background-position: right;
+transition-duration: 1s;
 }
 
 .boton-magia:hover::before {
-  background-position: right;
-  transition-duration: 1s;
+background-position: right;
+transition-duration: 1s;
 }
 
 .boton-magia:active {
-  transform: scale(0.95);
+transform: scale(0.95);
 }
 
 
