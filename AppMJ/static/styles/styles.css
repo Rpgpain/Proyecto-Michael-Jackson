@@ -96,10 +96,8 @@ body {
   transform: scale(0.95);
 }
 
-/* ==================================
-   ANIMACIONES PREMIUM DE ENTRADA
-   ================================== */
 
+/* APARTADO DE ANIMACIONES */
 @keyframes fadeInBg {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -108,10 +106,10 @@ body {
 @keyframes slideUpFade {
     from {
         opacity: 0;
-        transform: translateY(40px); /* Empieza 40px más abajo */
+        transform: translateY(40px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Termina en su posición original */
+        transform: translateY(0); 
     }
 }
