@@ -474,27 +474,21 @@ SECCIÓN 4: LA MAGIA DEL BAILE (Static Gallery)
     margin: 0;
 }
 
-/* --- EFECTO HOVER (Centrado en el Borde) --- */
 
-/* Cuando pasamos el cursor por el grid, oscurecemos las otras un poco */
 .grid-movimientos:hover .tarjeta-movimiento {
     opacity: 0.5;
-    transform: scale(0.98); /* Pequeño efecto de alejamiento en las no seleccionadas */
+    transform: scale(0.98); 
 }
 
-/* Cuando pasamos el cursor sobre LA tarjeta específica */
+/* EFECTO CUANDO SE PASA EL CURSOR POR ENCIMA*/
 .grid-movimientos .tarjeta-movimiento:hover {
     opacity: 1;
     transform: translateY(-15px) scale(1); /* Se eleva y vuelve a tamaño normal */
-    
-    /* ¡NUEVO: El borde se ilumina intensamente! */
     border-color: rgba(212, 175, 55, 1); /* Dorado puro y brillante */
-    
-    /* Sombra dorada para dar efecto de resplandor */
     box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); 
 }
 
-/* Zoom sutil en la imagen al hacer hover */
+
 .tarjeta-movimiento:hover .imagen-encabezado img {
     transform: scale(1.08);
 }

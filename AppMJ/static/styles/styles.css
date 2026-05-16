@@ -7,7 +7,7 @@
 body {
     background-color: black;
     color: white; 
-    font-family: sans-serif; /* Una fuente limpia por ahora */
+    font-family: sans-serif;
 }
 
 .main-header {
@@ -25,7 +25,6 @@ body {
     background-size: 60%, cover; 
     background-repeat: no-repeat, no-repeat; 
     
-    /* ¡EL TRUCO MÁGICO! Mezcla la foto y el gradiente borrando el borde negro */
     background-blend-mode: screen;
 }
 
