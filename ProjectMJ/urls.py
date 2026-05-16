@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name='inicio'),
     path('legado/', views.legado, name='legado'),
+    path('albumes/', views.albumes, name='albumes'),
 ]
 
 

@@ -6,3 +6,6 @@ def inicio(request):
 
 def legado(request):
     return render (request, 'index2.html')
+
+def albumes(request):
+    return render(request, 'index3.html')
