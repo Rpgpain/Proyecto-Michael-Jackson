@@ -402,10 +402,8 @@ transform: scale(0.95);
 
 .tarjeta-movimiento.tarjeta-movimiento {
     background: rgba(20, 20, 20, 0.5); /* Fondo muy sutil */
-    
     /*  Borde definido por defecto! */
     border: 2px solid rgba(212, 175, 55, 0.2); /* Un dorado muy oscuro/transparente para empezar */
-    
     border-radius: 12px; /* Esquinas ligeramente redondeadas para un look moderno */
     overflow: hidden; /* Mantiene la imagen dentro de los bordes redondeados */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transición suave profesional */
