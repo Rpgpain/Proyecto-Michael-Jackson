@@ -354,34 +354,7 @@ transform: scale(0.95);
 }
 
 
-/* =========================================
-SECCIÓN 4: LA MAGIA DEL BAILE (Static Gallery)
-   ========================================= */
-
-.seccion-baile {
-    position: relative;
-    padding: 8rem 2rem;
-    background-color: #050505;
-    overflow: hidden;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    
-}
-
-/* EFECTO ESCENARIO (Mantenemos la profundidad de fondo) */
-.resplandor-escenario {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.06) 0%, transparent 80%);
-    pointer-events: none;
-    padding: 6rem 0;
-}
+/* --- SECCION DE LOS BAILES --- */
 
 /* --- CENTRADO Y MÁRGENES DE LOS TÍTULOS --- */
 .contenedor-baile {
@@ -389,38 +362,45 @@ SECCIÓN 4: LA MAGIA DEL BAILE (Static Gallery)
     z-index: 10;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 6rem 0; /* Evita que el contenido toque los bordes de la pantalla */
+    
 }
 
+/* Forzamos el centrado de los textos superiores */
 .text-center {
     text-align: center;
+    width: 100%;
+    display: block;
 }
 
 .titulo-dorado {
     color: #D4AF37;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
     font-weight: 700;
 }
 
 .subtitulo-baile {
     color: #9CA3AF;
-    margin-bottom: 5rem; /* Espacio generoso antes de las tarjetas */
+    margin-bottom: 4rem; /* Más espacio entre el subtítulo y las tarjetas */
     letter-spacing: 2px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
 }
 
-/* --- GRID DE 3 COLUMNAS Y ESPACIADO --- */
+/* --- ESPACIADO DEL GRID (Separación de cuadros) --- */
 .grid-movimientos {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 3rem; /* Espacio entre cuadros */
+    gap: 4rem; /* AUMENTADO: Mucha más separación entre las columnas */
     width: 100%;
+    border-radius: 12px; /* Esquinas ligeramente redondeadas para un look moderno */
+    overflow: hidden; /* Mantiene la imagen dentro de los bordes redondeados */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transición suave profesional */
 }
 
-/* --- LA TARJETA CON BORDE DEFINIDO --- */
-.tarjeta-movimiento {
+.tarjeta-movimiento.tarjeta-movimiento {
     background: rgba(20, 20, 20, 0.5); /* Fondo muy sutil */
     
     /*  Borde definido por defecto! */
@@ -433,68 +413,75 @@ SECCIÓN 4: LA MAGIA DEL BAILE (Static Gallery)
     flex-direction: column;
 }
 
-/* --- CONTENEDOR DE LA IMAGEN (CUADRADO) --- */
-.imagen-encabezado {
+
+/* --- EL TRUCO DEL VIDEO AL PASAR EL CURSOR --- */
+.video-encabezado {
+    position: relative; /* Importante para superponer imagen y video */
     width: 100%;
-    aspect-ratio: 4 / 5; /* Mantenemos el formato cuadrado */
+    aspect-ratio: 3 / 4;
+    background: transparent;
     overflow: hidden;
-    /* Línea divisoria interna (opcional, si te gusta cómo se ve el borde total quizás no la necesites) */
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2); 
+    border-bottom: 2px solid #D4AF37;
 }
 
-.imagen-encabezado img {
+.poster-estatico, .video-baile {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin deformar */
-    transition: transform 0.6s ease; /* Zoom lento al pasar el cursor */
-
-    object-position: center;
+    object-fit: cover;
+    transition: opacity 0.4s ease, transform 0.5s ease;
 }
 
-/* --- CUERPO DE TEXTO --- */
+/* Estado inicial: Imagen visible, video invisible */
+.poster-estatico {
+    opacity: 1;
+    z-index: 2; /* Por encima del video */
+}
+
+.video-baile {
+    opacity: 0; /* Oculto por defecto */
+    z-index: 1;
+}
+
+/* Estado Hover: Ocultamos la imagen y mostramos el video */
+.tarjeta-movimiento:hover .poster-estatico {
+    opacity: 0;
+}
+
+.tarjeta-movimiento:hover .video-baile {
+    opacity: 1;
+    transform: scale(1.05); /* Pequeño zoom al video para darle más vida */
+}
+
+/* --- INTERLINEADO DEL TEXTO (Typography) --- */
 .cuerpo-tarjeta {
-    padding: 2rem;
+    padding: 2rem; /* Más espacio interno para que el texto respire */
     text-align: left;
-    flex-grow: 1; /* Asegura que todas las tarjetas tengan la misma altura si el texto varía */
-}
-
-.cuerpo-tarjeta h3 {
-    color: #fff; /* Título en blanco para contraste */
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-family: 'Urbanist', sans-serif;
-    letter-spacing: 1px;
 }
 
 .cuerpo-tarjeta p {
     color: #ccc;
     font-size: 0.95rem;
-    line-height: 1.8; /* Mantenemos el buen interlineado */
+    line-height: 1.8; /* AUMENTADO: Mejor interlineado para lectura más cómoda */
     margin: 0;
 }
 
-
+/* Mantenemos el efecto de iluminar la tarjeta enfocada */
 .grid-movimientos:hover .tarjeta-movimiento {
-    opacity: 0.5;
-    transform: scale(0.98); 
+    opacity: 0.4;
 }
 
-/* EFECTO CUANDO SE PASA EL CURSOR POR ENCIMA*/
 .grid-movimientos .tarjeta-movimiento:hover {
     opacity: 1;
-    transform: translateY(-15px) scale(1); /* Se eleva y vuelve a tamaño normal */
-    border-color: rgba(212, 175, 55, 1); /* Dorado puro y brillante */
-    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); 
-}
-
-
-.tarjeta-movimiento:hover .imagen-encabezado img {
-    transform: scale(1.08);
+    transform: translateY(-10px);
+    border-color: #D4AF37;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
 }
 
 /* =========================================
-   ANIMACIONES DE ENTRADA SUAVES
+ANIMACIONES DE ENTRADA SUAVES
    ========================================= */
 
 @keyframes fadeLeft {

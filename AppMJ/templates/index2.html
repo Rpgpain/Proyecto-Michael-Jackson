@@ -108,13 +108,16 @@
 
     <div class="contenedor-baile">
         <h2 class="titulo-dorado text-center">LA MAGIA DEL BAILE</h2>
-        <p class="subtitulo-baile text-center">Explora los movimientos icónicos en imágenes</p>
+        <p class="subtitulo-baile text-center">Explora los movimientos icónicos</p>
 
         <div class="grid-movimientos">
             
             <div class="tarjeta-movimiento">
-                <div class="imagen-encabezado">
-                    <img src="{% static 'images/moonwalk2.jfif'%}" alt="Michael Jackson Moonwalk">
+                <div class="video-encabezado">
+                    <img class="poster-estatico" src="{% static 'images/moonwalk2.jfif' %}" alt="Moonwalk Estático">
+                    <video class="video-baile" autoplay loop muted playsinline>
+                        <source src="{% static 'images/video moonwalk.mp4' %}" type="video/mp4">
+                    </video>
                 </div>
                 <div class="cuerpo-tarjeta">
                     <h3>El Moonwalk</h3>
@@ -123,8 +126,11 @@
             </div>
 
             <div class="tarjeta-movimiento">
-                <div class="imagen-encabezado">
-                    <img src="{% static 'images/inclinacion.jfif' %}" alt="Inclinación Smooth Criminal">
+                <div class="video-encabezado">
+                    <img class="poster-estatico" src="{% static 'images/inclinacion.jfif' %}" alt="Inclinación Estática">
+                    <video class="video-baile" autoplay loop muted playsinline>
+                        <source src="{% static 'images/video inclinacion.mp4' %}" type="video/mp4">
+                    </video>
                 </div>
                 <div class="cuerpo-tarjeta">
                     <h3>Inclinación</h3>
@@ -133,8 +139,11 @@
             </div>
 
             <div class="tarjeta-movimiento">
-                <div class="imagen-encabezado">
-                    <img src="{% static 'images/giros y puntas 2.jfif' %}" alt="Giros y Puntas de Michael Jackson">
+                <div class="video-encabezado">
+                    <img class="poster-estatico" src="{% static 'images/giros y puntas 2.jfif' %}" alt="Giros Estáticos">
+                    <video class="video-baile" autoplay loop muted playsinline>
+                        <source src="{% static 'images/video giros y puntas.mp4' %}" type="video/mp4">
+                    </video>
                 </div>
                 <div class="cuerpo-tarjeta">
                     <h3>Giros y Puntas</h3>
@@ -145,7 +154,6 @@
         </div>
     </div>
 </section>
-
 
     <!-- FOOTER -->
     <footer style="text-align: center; padding: 20px;">
