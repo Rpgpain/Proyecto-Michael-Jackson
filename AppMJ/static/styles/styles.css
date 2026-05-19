@@ -10,6 +10,7 @@ body {
     font-family: sans-serif;
 }
 
+
 .main-header {
     animation: fadeInBg 2s ease-out;
     display: grid;
