@@ -1,10 +1,126 @@
 /* =========================================
+NAVEGACIÓN
+   ========================================= *========================================= */
+:root {
+    --gold: #D4AF37;
+    --gold-bright: #F3E5AB;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --text-main: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --font-heading: 'Cinzel', Georgia, serif;
+    --nav-height: 80px;
+}
+
+/* =========================================
+ESTILOS DE LA BARRA DE NAVEGACIÓN
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(7, 7, 7, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+    color: var(--gold-bright);
+    text-shadow: 0 0 8px rgba(243, 229, 171, 0.4);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 6px var(--gold);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.btn-admin {
+    border: 1px solid var(--gold);
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 20px;
+    transition: all 0.3s ease !important;
+    color: var(--gold) !important;
+}
+
+.btn-admin::after {
+    display: none !important;
+}
+
+.btn-admin:hover {
+    background-color: var(--gold);
+    color: #000 !important;
+    box-shadow: 0 0 15px var(--gold-glow);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
 SECCIÓN 1: LA HISTORIA (Pantalla Dividida)
    ========================================= */
 
 .seccion-historia {
     background-color: #0A0A0A; 
     padding: 6rem 2rem;
+    padding-top: calc(var(--nav-height) + 4rem);
 }
 
 .contenedor-historia {
@@ -476,6 +592,33 @@ transform: scale(0.95);
     transform: translateY(-10px);
     border-color: #D4AF37;
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+
+/* 7. Footer */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(3, 3, 3, 0.9);
+    padding: 2.5rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-thanks {
+    font-size: 0.8rem !important;
+    color: var(--gold) !important;
+    font-weight: 400;
 }
 
 /* =========================================

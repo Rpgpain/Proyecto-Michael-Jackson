@@ -5,14 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Legado - Michael Jackson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/styles2.css' %}">
 </head>
 <body style="background-color: #0A0A0A; color: #F3F4F6;">
     
     <!--  NAV -->
-    <header>
-        
-    </header>
+    <!-- Floating Glassmorphic Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'inicio' %}" class="logo">MJ<span>LEGADO</span></a>
+            <ul class="nav-links">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'legado' %}">Legado</a></li>
+                <li><a href="{% url 'albumes' %}">Álbumes</a></li>
+                <li><a href="/admin/" target="_blank" class="btn-admin">Añadir Álbum</a></li>
+            </ul>
+        </div>
+    </nav>
 
 <!-- SECCIÓN LA HISTORIA Y LEGADO -->
     <section class="seccion-historia">
@@ -157,9 +169,11 @@
 </section>
 
     <!-- FOOTER -->
-    <footer style="text-align: center; padding: 20px;">
-        <p>© Copyright 2026 MJ Project MJ</p>
-        <p>Gracias por entrar a la pagina :)</p>
+    <footer>
+        <div class="footer-content">
+            <p>© Copyright 2026 MJ Project.</p>
+            <p class="footer-thanks">Gracias por Vistar esta Grandiosa Pagina :D 🌟</p>
+        </div>
     </footer>
 
 </body>

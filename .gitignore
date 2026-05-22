@@ -2,8 +2,7 @@
 *.pyc
 *~
 __pycache__/
-db.sqlite3
-db.sqlite3-journal
+
 *.log
 
 # Entornos Virtuales
