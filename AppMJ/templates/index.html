@@ -11,6 +11,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}">
+    <style>
+        .user-info-home {
+            font-size: 0.95rem;
+            color: #D4AF37;
+            margin-bottom: -5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            animation: slideUpFade 1.5s ease-out 0.5s both;
+        }
+        .btn-logout-home {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            border-bottom: 1px dashed transparent;
+            padding-bottom: 2px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-logout-home:hover {
+            color: #ff6b6b;
+            border-bottom: 1px dashed #ff6b6b;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,9 +44,18 @@
         <div class="contenido">
             <h1>MICHAEL<br>JACKSON</h1>
             <p class="subtitulo">El legado del Rey del Pop</p>
-            <a href="{% url 'legado' %}">
-                <button class="boton-magia"></button>
-            </a>
+            
+            {% if user.is_authenticated %}
+                <p class="user-info-home">Conectado como: <strong>{{ user.username }}</strong></p>
+                <a href="{% url 'legado' %}">
+                    <button class="boton-magia"></button>
+                </a>
+                <a href="{% url 'logout' %}" class="btn-logout-home">Cerrar Sesión</a>
+            {% else %}
+                <a href="{% url 'login' %}">
+                    <button class="boton-magia"></button>
+                </a>
+            {% endif %}
         </div>
     </header>
 

@@ -9,6 +9,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/styles2.css' %}">
+    <style>
+        .btn-logout {
+            border: 1px solid #ff4d4d;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 20px;
+            transition: all 0.3s ease !important;
+            color: #ff4d4d !important;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+        .btn-logout:hover {
+            background-color: #ff4d4d;
+            color: #000 !important;
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+            transform: translateY(-2px);
+        }
+        .btn-logout::after {
+            display: none !important;
+        }
+    </style>
 </head>
 <body style="background-color: #0A0A0A; color: #F3F4F6;">
     
@@ -19,6 +40,11 @@
             <a href="{% url 'inicio' %}" class="logo">MJ<span>LEGADO</span></a>
             <ul class="nav-links">
                 <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'albumes' %}">Discografía</a></li>
+                {% if user.is_authenticated %}
+                <li><span style="color: #D4AF37; font-size: 0.95rem; font-weight: 500;">Hola, <strong>{{ user.username }}</strong></span></li>
+                <li><a href="{% url 'logout' %}" class="btn-logout">Cerrar Sesión</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>

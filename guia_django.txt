@@ -1,0 +1,85 @@
+========================================================================
+GUÍA DE FUNCIONAMIENTO DE DJANGO - PROYECTO MICHAEL JACKSON
+========================================================================
+
+Esta guía describe el funcionamiento de Django y cómo interactúan sus 
+componentes en tu proyecto "Proyecto Final - Michael Jackson".
+
+Django utiliza el patrón arquitectónico MVT (Modelo - Vista - Plantilla).
+
+------------------------------------------------------------------------
+1. EL FLUJO DE TRABAJO MVT (Model - View - Template)
+------------------------------------------------------------------------
+
+Cuando un usuario accede a una página en su navegador, el flujo es:
+
+  [ Navegador del Usuario ]
+            │
+            ▼ (1. Solicita una URL, por ejemplo: /albumes/)
+      [ urls.py ]
+            │
+            ▼ (2. Redirige la petición a la vista correspondiente)
+      [ views.py ] <═══ (3. Solicita / recibe registros) ═══> [ models.py ]
+            │                                                      │
+            ▼ (4. Renderiza el HTML con los datos)                 ▼ (Base de datos)
+     [ index3.html ]                                         [ db.sqlite3 ]
+            │
+            ▼ (5. Devuelve la página HTML completa al navegador)
+  [ Navegador del Usuario ]
+
+
+------------------------------------------------------------------------
+2. LOS COMPONENTES CLAVE EN TU PROYECTO
+------------------------------------------------------------------------
+
+A. EL ENRUTADOR DE URLS (ProjectMJ/urls.py)
+   Es la puerta de entrada. Relaciona las direcciones URL escritas en 
+   el navegador con funciones específicas en tu código (vistas).
+
+   En tu archivo urls.py tienes:
+   - '' -> Ejecuta views.inicio (Página principal)
+   - 'legado/' -> Ejecuta views.legado (Sección legado)
+   - 'albumes/' -> Ejecuta views.albumes (Sección de álbumes)
+
+B. EL MODELO (AppMJ/models.py)
+   Representa la estructura de tu base de datos. Cada clase es una 
+   tabla y cada atributo de la clase es un campo/columna.
+   
+   Tu clase "Album" define que cada disco tiene:
+   - titulo (Texto corto)
+   - anio_lanzamiento (Número entero)
+   - portada_url (URL de la imagen)
+   - spotify_url (Enlace de reproducción)
+
+C. LA VISTA (AppMJ/views.py)
+   Contiene la lógica de negocio. Recibe la petición del usuario, 
+   pide datos al Modelo y se los entrega a la Plantilla (HTML).
+   
+   En tu vista "albumes(request)":
+   1. Hace la consulta: Album.objects.all().order_by('anio_lanzamiento')
+   2. Le pasa los álbumes al template index3.html para que los dibuje.
+
+D. EL TEMPLATE O PLANTILLA (AppMJ/templates/)
+   Es el archivo HTML que se muestra al usuario, pero enriquecido con 
+   etiquetas de Django ({% %}) para poder mostrar datos dinámicos.
+   
+   En tu "index3.html":
+   - Usa {% for album in albumes %} para repetir un bloque HTML por cada 
+     álbum guardado.
+   - Usa {{ album.titulo }} y {{ album.portada_url }} para rellenar la 
+     información del disco automáticamente.
+
+
+------------------------------------------------------------------------
+3. EJEMPLO REAL DE PETICIÓN: Ver la lista de álbumes (/albumes/)
+------------------------------------------------------------------------
+
+1. El usuario entra a: http://localhost:8000/albumes/
+2. Django entra a "ProjectMJ/urls.py" y ve que esa ruta llama a "views.albumes".
+3. Django ejecuta la función "albumes" en "AppMJ/views.py".
+4. La función pide todos los álbumes a "AppMJ/models.py". El ORM de Django 
+   realiza la consulta en la base de datos "db.sqlite3".
+5. La vista toma el archivo "AppMJ/templates/index3.html" y procesa los 
+   bucles {% for %}, inyectando los datos de cada álbum.
+6. Se envía el archivo HTML resultante al navegador, que dibuja las 
+   tarjetas con sus portadas y enlaces a Spotify.

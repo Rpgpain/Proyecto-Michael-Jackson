@@ -23,6 +23,8 @@ urlpatterns = [
     path('', views.inicio, name='inicio'),
     path('legado/', views.legado, name='legado'),
     path('albumes/', views.albumes, name='albumes'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
 ]
 
 
