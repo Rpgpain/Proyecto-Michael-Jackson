@@ -1,6 +1,6 @@
 /* =========================================
-NAVEGACIÓN
-   ========================================= *========================================= */
+            NAVEGACIÓN
+======================================== */
 :root {
     --gold: #D4AF37;
     --gold-bright: #F3E5AB;
@@ -12,8 +12,8 @@ NAVEGACIÓN
 }
 
 /* =========================================
-ESTILOS DE LA BARRA DE NAVEGACIÓN
-   ========================================= */
+    ESTILOS DE LA BARRA DE NAVEGACIÓN
+========================================= */
 .navbar {
     position: fixed;
     top: 0;
@@ -114,8 +114,8 @@ ESTILOS DE LA BARRA DE NAVEGACIÓN
 
 
 /* =========================================
-SECCIÓN 1: LA HISTORIA (Pantalla Dividida)
-   ========================================= */
+ SECCIÓN 1: LA HISTORIA (Pantalla Dividida)
+========================================= */
 
 .seccion-historia {
     background-color: #0A0A0A; 
@@ -655,3 +655,176 @@ ANIMACIONES DE ENTRADA SUAVES
 .tarjeta-movimiento:nth-child(1) { animation: fadeUp 1s ease-out 0.4s both; }
 .tarjeta-movimiento:nth-child(2) { animation: fadeUp 1s ease-out 0.7s both; }
 .tarjeta-movimiento:nth-child(3) { animation: fadeUp 1s ease-out 1.0s both; }
+
+/* =========================================
+   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   ========================================= */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .grid-movimientos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Barra de Navegación */
+    .navbar {
+        height: auto;
+        padding: 0.75rem 0;
+        position: fixed;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .nav-links {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .btn-admin {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.85rem;
+    }
+
+    /* Sección Historia */
+    .seccion-historia {
+        padding: 4rem 1.5rem;
+        padding-top: calc(var(--nav-height) + 7rem);
+    }
+    
+    .contenedor-historia {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .titulo-dorado {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .historia-texto {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .historia-texto p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .enlace-biografia {
+        margin: 1rem auto 0 auto;
+    }
+
+    /* Sección Records */
+    .seccion-records {
+        margin: 5rem 0;
+        padding: 3rem 1.5rem;
+    }
+    
+    .contenedor-records {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        justify-items: center;
+    }
+    
+    .record-item {
+        min-width: 140px;
+    }
+    
+    .record-numero {
+        font-size: 2.5rem;
+    }
+
+    /* Banner Carrusel */
+    .banner-carrusel {
+        height: 450px;
+    }
+    
+    .contenido-banner h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .contenido-banner p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Sección Baile */
+    .contenedor-baile {
+        padding: 4rem 1.5rem;
+    }
+    
+    .contenedor-baile .titulo-dorado {
+        font-size: 2.2rem;
+    }
+    
+    .subtitulo-baile {
+        margin-bottom: 2.5rem;
+    }
+    
+    .grid-movimientos {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .tarjeta-movimiento {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Barra de Navegación */
+    .nav-links {
+        gap: 0.75rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Sección Historia */
+    .seccion-historia {
+        padding-top: calc(var(--nav-height) + 8rem);
+    }
+    
+    .titulo-dorado {
+        font-size: 1.75rem;
+    }
+
+    /* Sección Records */
+    .contenedor-records {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Banner Carrusel */
+    .banner-carrusel {
+        height: 380px;
+    }
+    
+    .contenido-banner h1 {
+        font-size: 1.6rem;
+    }
+    
+    .contenido-banner p {
+        font-size: 0.9rem;
+    }
+
+    /* Sección Baile */
+    .contenedor-baile .titulo-dorado {
+        font-size: 1.8rem;
+    }
+}

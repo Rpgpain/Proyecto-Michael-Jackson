@@ -7,7 +7,7 @@
 body {
     background-color: black;
     color: white; 
-    font-family: sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 
@@ -16,14 +16,16 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     height: 100vh; 
+    width: 100%;
+    overflow: hidden;
 
     background-image: 
         url('../images/Michael_Jackson_Fondo_Negro.jpg'),
         radial-gradient(circle at bottom right, #2b1e06 0%, #000000 60%); 
     
-    /* Configuración de posición y tamaño (Primero la foto, luego el gradiente) */
-    background-position: 0% -550%, center center;
-    background-size: 60%, cover; 
+    /* Primero la foto (bien posicionada a la izquierda y centrada), luego el gradiente */
+    background-position: left center, center center;
+    background-size: 45% auto, cover; 
     background-repeat: no-repeat, no-repeat; 
     
     background-blend-mode: screen;
@@ -36,13 +38,32 @@ body {
     /* Centramos el texto vertical y horizontalmente dentro de su mitad */
     place-self: center;
     text-align: center; /* Para que los textos queden alineados entre sí */
+    padding: 2rem;
+    max-width: 90%;
     
     /* Animación: Espera 0.5s y luego entra deslizando hacia arriba */
     animation: slideUpFade 1.5s ease-out 0.5s both;
 }
 
-.contenido h1{
-    font-size: 7rem;
+.contenido h1 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #ffffff 30%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.contenido .subtitulo {
+    font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #9CA3AF;
+    margin-bottom: 1.5rem;
 }
 
 
@@ -113,3 +134,77 @@ transform: scale(0.95);
         transform: translateY(0); 
     }
 }
+
+/* RESPONSIVE DESIGN FOR MOBILE */
+@media (max-width: 768px) {
+    .main-header {
+        grid-template-columns: 1fr; 
+        background-position: center bottom, center center;
+        background-size: auto 50%, cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+    
+    .contenido {
+        grid-column: 1;
+        place-self: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 2rem 1.25rem;
+        border-radius: 16px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 95%;
+        margin-top: 5vh; /* Push content up to leave room for the bottom image */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .contenido h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        line-height: 1.1;
+        letter-spacing: 2px;
+    }
+    
+    .contenido .subtitulo {
+        font-size: clamp(0.85rem, 3.5vw, 1.05rem);
+        margin-top: 0.5rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .boton-magia {
+        width: 190px;
+        height: 38px;
+        margin: 10px auto;
+    }
+    
+    .boton-magia::before {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        background-size: auto 45%, cover;
+        padding: 1.5rem 0.75rem;
+    }
+
+    .contenido {
+        padding: 1.75rem 1rem;
+        margin-top: 4vh;
+    }
+
+    .contenido h1 {
+        font-size: clamp(1.6rem, 10vw, 2.2rem);
+        letter-spacing: 1px;
+    }
+    
+    .contenido .subtitulo {
+        font-size: 0.8rem;
+    }
+}
+
+

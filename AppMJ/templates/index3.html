@@ -14,23 +14,19 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{% static 'styles/styles3.css' %}">
 </head>
-
 <body>
-
-    <!-- Floating Glassmorphic Navigation Bar -->
+   <!-- BARRA DE NAVEGACION SUPERIOR -->
     <nav class="navbar">
-    <div class="nav-container">
-        <a href="{% url 'inicio' %}" class="logo">MJ<span>LEGADO</span></a>
-        <ul class="nav-links">
-            <li><a href="{% url 'inicio' %}">Inicio</a></li>
-            <li><a href="{% url 'legado' %}">Legado</a></li>
-            <li><a href="{% url 'albumes' %}">Álbumes</a></li>
-            <li><a href="/admin/" target="_blank" class="btn-admin">Añadir Álbum</a></li>
-        </ul>
-    </div>
-</nav>
+        <div class="nav-container">
+            <a href="{% url 'inicio' %}" class="logo">MJ<span>LEGADO</span></a>
+            <ul class="nav-links">
+                <li><a href="{% url 'legado' %}">Legado</a></li>
+                <li><a href="/admin/" target="_blank" class="btn-admin">Añadir Álbum</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Header Section with Spotlight Effect -->
+
     <header class="hero-header">
         <div class="glow-spotlight"></div>
         <div class="header-content">
@@ -41,7 +37,7 @@
         </div>
     </header>
 
-    <!-- Main Content: Albums Grid -->
+    <!-- CUERPO (BODY) ALMACEN DE ALBUMES -->
     <main class="container">
         <div class="grid-albumes">
             {% for album in albumes %}
@@ -113,7 +109,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- BARRA INFERIOR (FOOTER) -->
     <footer>
         <div class="footer-content">
             <p>© Copyright 2026 MJ Project.</p>
